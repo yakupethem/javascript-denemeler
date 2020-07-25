@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <style>
+
+        #c1 {
+            border: 2px solid black;
+            background-color: yellow;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <img id="img" src="html-icon.png" width="200" height="200" />
+    <img id="img2" src="cicek.jpg" width="200" height="200" />
+    <canvas id="c1" width="500" height="500"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("c1");
+        var a = canvas.getContext("2d");
+
+
+
+        //a.beginPath();
+
+        //a.moveTo(100, 20);
+        //a.lineTo(50, 100);
+        //a.lineTo(150, 100);
+
+        //a.closePath();
+
+        //a.lineWidth = "15";
+
+        //a.strokeStyle="red"
+        //a.stroke()
+
+        //a.fillStyle = "green";
+        //a.fill();
+
+        //a.fillRect(200, 20, 150, 60);
+
+        //b.arc(300, 200, 50, 0, Math.PI, true);
+        //b.lineWidth = "5";
+        //b.fillStyle = "white";
+        //b.strokeStyle="green"
+        //b.stroke();
+        //b.fill();
+
+        //var grd = a.createLinearGradient(0, 0, 250, 0);
+
+        //grd.addColorStop(0, "black");
+        //grd.addColorStop(1, "white");
+
+        //a.fillStyle = grd;
+
+        //a.fillRect(20, 20, 250, 350)
+
+        //var grd = a.createRadialGradient(75,50,10,90,60,100);
+
+        //grd.addColorStop(0, "black");
+        //grd.addColorStop(0.5, "red");
+        //grd.addColorStop(1, "white");
+
+        //a.fillStyle = grd;
+
+        //a.fillRect(20, 20, 150, 170)
+
+        //a.font = "30px verdana";
+        //a.fillStyle = "red";
+        //a.strokeStyle = "blue";
+
+        //a.textAlign = "center";
+
+        //a.shadowColor = "black";
+        //a.shadowBlur = "5";
+
+        //a.shadowOffsetX = "10";
+        //a.shadowOffsetY = "10";
+
+        //a.fillText("javascript-canvas", canvas.width / 2, canvas.height / 2);
+
+        window.onload = function () {
+
+            var imaga = this.document.getElementById("img");
+
+            a.drawImage(imaga, 10, 10)
+
+
+
+        }
+        $(function () {
+
+            $("#img2").draggable({
+
+                axis: "both",
+                containment: "#c1"
+
+
+
+            })
+
+
+
+        })
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

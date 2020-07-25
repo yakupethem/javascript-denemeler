@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>telefon reheberi</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="shortcut icon" href="guidebook.ico" />
+
+    <style>
+        #liste {
+            border-collapse: collapse;
+            width: 50%;
+            position:absolute;
+            left:25%;
+            top:15%
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px
+        }
+
+        tr:nth-child(even) {
+            background-color: bisque
+        }
+    </style>
+</head>
+<body>
+
+    <input id="ara" type="text" placeholder="Ara..."/><br /><br />
+
+    <table id="liste">
+        <thead>
+            <tr>
+                <th>isim</th>
+                <th>soyisim</th>
+                <th>tel</th>
+                <th>mail</th>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr>
+                <td>ahmet</td>
+                <td>taş</td>
+                <td>435432342</td>
+                <td>ahmet@mail.com</td>
+            </tr>
+            <tr>
+                <td>mehmet</td>
+                <td>baş</td>
+                <td>896826857</td>
+                <td>mehmet@mail.com</td>
+            </tr>
+            <tr>
+                <td>cansu</td>
+                <td>kaş</td>
+                <td>576854745</td>
+                <td>cansu@mail.com</td>
+            </tr>
+            <tr>
+                <td>büşra</td>
+                <td>tabakçı</td>
+                <td>543564375</td>
+                <td>busra@mail.com</td>
+            </tr>
+            <tr>
+                <td>yako</td>
+                <td>trkylmaz</td>
+                <td>563458345</td>
+                <td>yako@mail.com</td>
+            </tr>
+            <tr>
+                <td>eto</td>
+                <td>trkylmz</td>
+                <td>654063452</td>
+                <td>eto@mail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        $(function () {
+
+            $("#ara").keyup(function () {
+
+                var deger = $(this).val().toLowerCase();
+
+                $("#liste tr").filter(function () {
+
+                    $(this).toggle($(this).text().toLowerCase().indexOf(deger)>-1 )
+
+                })
+
+
+            })
+
+
+        })
+
+
+
+
+
+    </script>
+
+</body>
+</html>

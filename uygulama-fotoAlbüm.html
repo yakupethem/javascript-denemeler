@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>fotograf albümü</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <style>
+        #resim{
+            border:2px solid white;
+            width:200px;
+            /*height:auto;
+            display:inline-block;*/
+            
+        }
+        #div1 {
+/*            border: 2px solid grey;*/
+            position: absolute;
+            left: 300px;
+            top: 10px;
+            width: 800px;
+            height: 500px;
+            display: none;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="resim">
+        <img id="img1" src="kagit.jpg" /><br />
+        <img id="img4" src="minion.jpg" width="200" /><br />
+        <img id="img5" src="osmanlı.jpg" width="200" /><br />
+        <img id="img2" src="makas.jpg" /><br />
+        <img id="img3" src="tas.jpg" />
+
+    </div>
+
+    <div id="div1"></div>
+
+
+    <script>
+
+        $(function () {
+            $("#img1").mouseover(function () {
+                $("#div1").fadeIn(1000).css("backgroundImage", "url(kagit.jpg)");
+            })
+            $("#img1").mouseleave(function () {
+                $("#div1").css("display","none")
+            })
+            $("#img4").mouseover(function () {
+                $("#div1").fadeIn(1000).css("backgroundImage", "url(minion.jpg)");
+            })
+            $("#img4").mouseleave(function () {
+                $("#div1").css("display", "none")
+            })
+            $("#img2").mouseover(function () {
+                $("#div1").fadeIn(1000).css("backgroundImage", "url(makas.jpg)");
+            })
+            $("#img2").mouseleave(function () {
+                $("#div1").css("display", "none")
+            })
+            $("#img3").mouseover(function () {
+                $("#div1").fadeToggle(1000).css("backgroundImage", "url(tas.jpg)");
+            })
+            $("#img5").mouseover(function () {
+                $("#div1").fadeToggle(1000).css("backgroundImage", "url(osmanlı.jpg)");
+            })
+            
+            
+        })
+
+
+
+    </script>
+
+</body>
+</html>

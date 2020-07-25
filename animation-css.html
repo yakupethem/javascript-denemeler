@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img{
+            width:100px;
+            height:100px;
+           /* background-color:yellow;*/
+            position:relative;
+            
+            
+            
+
+            animation:ornek 8s linear  infinite alternate;
+               
+        }
+        @keyframes ornek{
+            0% {
+                /*background-color:yellow;*/
+                left: 0;
+                top: 0;
+                transform: rotate(360deg)
+            }
+            25% {
+                /*background-color: red;*/
+                left: 200px;
+                top: 0;
+                
+            }
+            50% {
+                /*background-color: green;*/
+                left: 200px;
+                top: 200px;
+            }
+            100% {
+                /*background-color: grey;*/
+                left: 0;
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="osmanlı.png" />
+    <button onclick="geri()">geri</button>
+    <script>
+        function geri() {
+            window.history.back()
+        }
+    </script>
+</body>
+</html>

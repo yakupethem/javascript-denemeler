@@ -1,0 +1,85 @@
+{
+  "kisiler": [
+    {
+      "ad": "ali",
+      "yas": 32,
+      "meslek": "polis",
+      "diller": [
+
+        {
+          "dil": "php",
+          "seviye": "uzman"
+        },
+        {
+          "dil": "java",
+          "seviye": "orta"
+        }
+      ]
+    },
+    {
+      "ad": "veli",
+      "yas": 22,
+      "meslek": "doktor",
+      "diller": [
+
+        {
+          "dil": "php",
+          "seviye": "uzman"
+        },
+        {
+          "dil": "java",
+          "seviye": "orta"
+        }
+      ]
+    },
+    {
+      "ad": "mehmet",
+      "yas": 43,
+      "meslek": "iþçi",
+      "diller": [
+
+        {
+          "dil": "php",
+          "seviye": "uzman"
+        },
+        {
+          "dil": "java",
+          "seviye": "orta"
+        }
+      ]
+    },
+    {
+      "ad": "büþra",
+      "yas": 24,
+      "meslek": "öðretmen",
+      "diller": [
+
+        {
+          "dil": "php",
+          "seviye": "uzman"
+        },
+        {
+          "dil": "java",
+          "seviye": "orta"
+        }
+      ]
+    },
+    {
+      "ad": "derya",
+      "yas": 30,
+      "meslek": "mimar",
+      "diller": [
+
+        {
+          "dil": "php",
+          "seviye": "uzman"
+        },
+        {
+          "dil": "java",
+          "seviye": "orta"
+        }
+      ]
+    }
+  ]
+
+}

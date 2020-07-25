@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>digital saat</title>
+
+
+    <style>
+
+        body{
+            background-color:crimson;
+        }
+        #div1{
+            width:40%;
+            height:auto;
+            position:relative;
+            left:450px;
+            top:150px;
+            
+        }
+        #saat{
+            width:150px;
+            height:150px;
+            background-color:bisque;
+            float:left;
+            margin-left:4px;
+            font-size:128px;
+            text-align:center
+        }
+        #dakika {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center
+        }
+        #saniye {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center
+        }
+
+
+
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="div1">
+        <div id="saat"></div>
+        <div id="dakika"></div>
+        <div id="saniye"></div>
+
+    </div>
+    <script>
+
+        var date = new Date();
+        var saat, saniye, dakika;
+        saat = date.getHours();
+        dakika = date.getMinutes();
+        saniye = date.getSeconds();
+
+        setInterval(function () {
+
+            document.getElementById("saat").innerHTML = saat;
+            document.getElementById("dakika").innerHTML = dakika;
+            document.getElementById("saniye").innerHTML = saniye++;
+
+            if (Number(document.getElementById("saniye").innerHTML == 59)) {
+
+                dakika++;
+                saniye = 0;
+
+            }
+            if (Number(document.getElementById("dakika").innerHTML > 59)) {
+
+                saat++;
+                dakika = 0;
+
+            }
+            if (Number(document.getElementById("saat").innerHTML >23)) {
+                                
+                saat = 0;
+
+            }
+            if (Number(document.getElementById("saniye").innerHTML <=9)) {
+
+                document.getElementById("saniye").innerHTML="0"+saniye
+
+            }
+            if (Number(document.getElementById("dakika").innerHTML < 9)) {
+
+                document.getElementById("dakika").innerHTML = "0" + dakika
+
+            }
+            if (Number(document.getElementById("saat").innerHTML < 9)) {
+
+                document.getElementById("saat").innerHTML = "0" + saat
+
+            }
+
+
+
+        }, 1000)
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

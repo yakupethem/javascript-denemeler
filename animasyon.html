@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Animasyon</title>
+</head>
+<body>
+
+    <div id="div1"></div>
+    <script>
+
+        var box = document.getElementById("div1");
+        box.style.backgroundImage = "url(indir.jpg)";
+        box.style.width= "200px";
+        box.style.height = "200px";
+        box.style.position = "absolute";
+        box.style.top = "1px";
+        box.style.left = "1px";
+
+
+        var yukaridon=false;
+        var soladon = false;
+
+        function animasyon(box, top, left) {
+
+            var ustkonum = Number(box.style.top.split("px")[0]);
+            var solkonum = Number(box.style.left.split("px")[0]);
+
+            if (ustkonum >= (window.innerHeight - box.style.height.split("px")[0])) {
+                yukaridon = true;
+            } else if (ustkonum <= 0) { yukaridon = false };
+
+            box.style.top = (ustkonum + top).toString() + "px";
+
+            if (solkonum >= (window.innerWidth - box.style.width.split("px")[0])) {
+                soladon = true;
+            } else if (solkonum <= 0) { soladon = false };
+
+            box.style.left = (solkonum + left).toString() + "px";
+
+        }
+
+        setInterval(function () {
+
+            if (yukaridon == true && soladon == true) {
+                animasyon(box, -1, -1)
+            }
+            else if (yukaridon == false && soladon == true) {
+                animasyon(box, 1, -1)
+            }
+            else if (yukaridon == true && soladon == false) {
+                animasyon(box, -1, 1)
+            }
+            else if (yukaridon == false && soladon == false) {
+                animasyon(box, 1, 1)
+            }
+
+
+
+
+
+        }, 10)
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

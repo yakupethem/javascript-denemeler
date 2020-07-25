@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Taş-Kağıt-Makas</title>
+
+    <style>
+
+        #div1{
+            width:55%;
+            height:300px;
+            position:relative;
+            top:100px;
+            left:20%;
+            border:2px solid green;
+            box-shadow:green 0px 5px 3px;
+        }
+        #sonuc {
+            width: 50%;
+            height: 100px;
+            position: relative;
+            top: 130px;
+            left: 25%;
+            color:forestgreen;
+            font-size: 64px;
+            text-align:center;
+            font-weight:bold;
+        }
+        #player1{
+            width:200px;
+            height:200px;
+            float:left;
+            border-bottom:2px solid black;
+            background-repeat:no-repeat;
+            background-position-x:center;
+            background-image:url(tas.jpg);
+        }
+        #player2 {
+            width: 200px;
+            height: 200px;
+            float: right;
+            border-bottom: 2px solid black;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-image: url(makas.jpg);
+        }
+        #skor {
+            width: 275px;
+            height: 200px;
+            float: left;
+            text-align:center;
+            font-size:32px;
+            color:black;
+        }
+        #skor1 {
+            width: 75px;
+            height: 75px;
+            float: left;
+            background-color:white;
+            margin-top:80px;
+            margin-left:25px;
+            border:1px solid black;
+            box-shadow:gray 0px 5px 3px;
+            text-align:center;
+            font-size:64px
+        }
+        #skor2 {
+            width: 75px;
+            height: 75px;
+            float: right;
+            background-color: white;
+            margin-top: 80px;
+            margin-left: 25px;
+            border: 1px solid black;
+            box-shadow: gray 0px 5px 3px;
+            text-align: center;
+            font-size: 64px
+        }
+        .play{
+            color:black;
+            font-size:20px;
+            font-weight:bold;
+            text-align:center;
+            margin-top:200px;
+            text-shadow:2px 2px 1px gray;
+        }
+        #btn{
+            position:relative;
+            width:200px;
+            height:40px;
+            margin-top:30px;
+            margin-left:250px;
+            font-size:20px;
+            
+        }
+
+
+
+    </style>
+
+
+
+
+
+
+
+</head>
+<body>
+
+    <div id="div1">
+
+        <div id="player1">
+            <p id="p1" class="play">Player 1</p>
+        </div>
+        <div id="skor">
+            skor
+            <div id="skor1">0</div>
+            <div id="skor2">0</div>
+        </div>
+        <div id="player2">
+            <p id="p2" class="play">Player 2</p>
+        </div>
+        <button id="btn">oyna</button>
+    </div>
+    <div id="sonuc"></div>
+
+
+
+    <script>
+
+        var secenekler=["url(tas.jpg)","url(makas.jpg)","url(kagit.jpg)"]
+
+        function sayiüret() {
+            var random = Math.round(Math.random() * 2)
+            return random
+        }
+        var resim1;
+        var resim2;
+
+        function yerlestir() {
+            resim1 = secenekler[sayiüret()];
+            resim2 = secenekler[sayiüret()];
+
+            document.getElementById("player1").style.backgroundImage = resim1;
+            document.getElementById("player2").style.backgroundImage = resim2;
+        }
+
+        function soncuYaz() {
+            var a = Number(document.getElementById("skor1").innerHTML);
+            var b = Number(document.getElementById("skor2").innerHTML);
+
+            if (resim1 == "url(tas.jpg)" && resim2 == "url(makas.jpg)") {
+                document.getElementById("skor1").innerHTML = a + 1;
+            }
+             else if (resim1 == "url(tas.jpg)" && resim2 == "url(kagit.jpg)") {
+                document.getElementById("skor2").innerHTML = b + 1;
+            }
+            else if (resim1 == "url(makas.jpg)" && resim2 == "url(tas.jpg)") {
+                document.getElementById("skor2").innerHTML = b + 1;
+            }
+            else if (resim1 == "url(makas.jpg)" && resim2 == "url(kagit.jpg)") {
+                document.getElementById("skor1").innerHTML = a + 1;
+            }
+            else if (resim1 == "url(kagit.jpg)" && resim2 == "url(tas.jpg)") {
+                document.getElementById("skor1").innerHTML = a + 1;
+            }
+            else if (resim1 == "url(kagit.jpg)" && resim2 == "url(makas.jpg)") {
+                document.getElementById("skor2").innerHTML = b + 1;
+            }
+
+        }
+
+        function kontrol() {
+            var a = Number(document.getElementById("skor1").innerHTML);
+            var b = Number(document.getElementById("skor2").innerHTML);
+
+            if (a == 3) {
+                document.getElementById("sonuc").innerHTML="player 1 kazandı"
+            }
+            if (b == 3) {
+                document.getElementById("sonuc").innerHTML = "player 2 kazandı"
+            }
+        }
+
+        
+
+
+
+        document.getElementById("btn").addEventListener("click", function () {
+            sayiüret();
+            yerlestir();
+            soncuYaz();
+            kontrol();
+        })
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

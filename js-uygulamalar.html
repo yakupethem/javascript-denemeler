@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        /*#btn1{
+            background-color:green;
+            width:32px;
+            height:25px;
+            border:none;
+            font-size:20px;
+            color:white
+        }
+        #btn2 {
+            background-color: red;
+            width: 32px;
+            height: 25px;
+            border: none;
+            font-size: 20px;
+            color:white
+        }
+        #img{
+            margin-left:250px;
+            width:350px;
+            height:450px
+            
+        }
+*/
+
+        #div{
+            width:350px;
+            height:150px;
+            
+            position:relative;
+            left:30%;
+            top:100px
+        }
+        #div2{
+            width:100%;
+            height:100px;
+            background-color:antiquewhite;
+            text-align:center;
+            padding-top:10px;
+        }
+        #div3{
+            width:100%;
+            height:50px;
+            background-color:aquamarine;
+            text-align:center;
+            font-size:16px;
+            padding-top:20px;
+            font-style:oblique
+                
+        }
+
+
+
+    </style>
+
+
+
+
+</head>
+
+<body id="body">
+    <!--<input id="Text1" type="text" value="0"/>
+    <button onclick="arttir()" id="btn1">+</button>
+    <button onclick="azalt()" id="btn2" >-</button><br /><br />
+    <img src="osmanlı.png" id="img" />-->
+
+    <div id="div">
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    
+
+    <script>
+        /*
+        function arttir() {
+
+            var a = document.getElementById("Text1").value;
+            a = Number(a)
+            a += 1
+            document.getElementById("Text1").value=a
+
+        }
+        function azalt() {
+
+            var a = document.getElementById("Text1").value;
+            a = Number(a)
+            a -= 1
+            document.getElementById("Text1").value = a
+        }
+        */
+        //----------------------------------
+        /*
+        var renk;
+        function renkdondur() {
+            var heksa = "ABCDEF0123456789"
+            renk = "#"
+            for (i = 0; i < 6; i++) {
+            var random = Math.round(Math.random() * 15)
+
+            renk += heksa.charAt(random)
+
+            }
+
+        }
+
+        setInterval(function(){
+            renkdondur()
+            document.getElementById("body").style.backgroundColor=renk
+
+        },2000)
+        
+        
+
+        var resim;
+
+        function resimkaristir() {
+            var resimler = ["osmanlı.png", "html-icon.png", "minion.png", "cicek.jpg"]
+            resim=""
+            var randon = Math.round(Math.random() * 3)
+            resim=resimler[randon]
+        }
+        setInterval(function karistir() {
+
+            resimkaristir()
+            document.getElementById("img").src=resim
+
+
+        }, 2000)
+            */
+        //-----------------------------------------------
+
+
+        var a = [{ yorum: "ilk günden beri kullanıyorum", isim: "merve" },
+            { yorum: "harikasınız çok beğendim", isim: "ahmet" },
+            { yorum: "mikemmel", isim: "yakocan40" },
+            {yorum:"pek kullanışlı değil",isim:"fatma"}]
+
+        var rasgele;
+        function sayıUret() {
+            rasgele=Math.round(Math.random()*3)
+        }
+        setInterval(function () {
+            sayıUret();
+            document.getElementById("div2").innerHTML = a[rasgele].yorum;
+            document.getElementById("div3").innerHTML=a[rasgele].isim
+        },2000)
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

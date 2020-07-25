@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS-udemy</title>
+    <style>
+      
+        #dotted{
+            border-style:dotted;height:50px
+        }
+        #dashed {
+            border-style: dashed
+        }
+        #solid {
+            border-style: solid
+        }
+        #double {
+            border-style: double
+        }
+        #groove {
+            border-style: groove
+        }
+        #ridge {
+            border-style: ridge
+        }
+        #inset {
+            border-style: inset
+        }
+        #outset {
+            border-style: outset
+        }
+        #none {
+            border-style: none
+        }
+        #hidden {
+            border-style: hidden
+        }
+
+
+        p {
+            border-width: 5px;
+            border-color: rgb(21, 244, 194);
+            width: 30%;
+            height: 55px;
+            margin-left: 30%;
+            text-align: center;
+            color: red;
+            /*font-size: 20px;*/
+            padding:10px;
+            box-sizing:border-box;
+            background-color:bisque
+            
+            
+        }
+
+        #back {
+            color:red;
+            border:4px groove yellow;           
+            text-align:justify;
+            background: url(minion.jpg) no-repeat fixed center content-box azure;
+            background-size:200px 100px;
+            text-transform:capitalize;
+            overflow-y:auto;
+            
+            height:150px;
+            
+            
+            
+            
+
+            
+            
+                
+        }
+        h5{
+            text-transform:uppercase;
+            text-decoration:underline;
+            font-size:20px;
+            text-align:right;
+            direction:rtl;
+            unicode-bidi:bidi-override
+        }
+        body {
+            background-color:plum;
+            background-image: url(cicek.jpg);
+            background-repeat:no-repeat;
+            background-attachment:scroll;
+            background-position:left top;
+            background-size:contain;
+            counter-reset:baslik
+            
+
+        }
+       
+        /*border-radius: kenarları ovalleştirir.*/
+
+        a:link{
+            font-size:20px;
+            text-decoration:none;
+            
+            
+        }
+        a:hover {
+            padding: 3px;
+            background-color: yellow;
+            color: red;
+            border: 2px dashed red;
+            text-decoration: underline;
+            transform: rotate(360deg);
+            
+            
+        }
+       a:active{
+           background-color:red;
+           color:black;
+           text-decoration:line-through
+       }
+       #g-span{
+           background-color:grey;color:white;
+           position:absolute;left:150px;visibility:hidden
+       }
+       a:hover #g-span{visibility:visible}
+        a {
+            display:inline-block;
+            margin-bottom:5px;
+            margin-left:550px;
+            background-color:rgb(100, 231, 23);           
+            text-align:center;   
+            transition:color 2s, transform 3s, background-color 3s;
+            
+           
+        }
+            a::before {
+                counter-increment: baslik;
+                content: "site" counter(baslik) " : ";
+                font-size:32px
+            }
+        a[href *=nba]{color:crimson;border:none;text-align:left;}
+        
+        ul{
+            list-style:georgian inside url(Nutcracker-icon.png);
+           /* padding:5px;*/
+            padding-left:30em;
+            color:red;background-color:aqua;font-size:larger;
+            
+            }
+        
+        
+        ol{
+            list-style:lower-greek ;text-align:right;font-size:20px;background-color:coral
+        }
+        
+        table{
+            border:1px solid black;
+            border-collapse:collapse;
+          
+            width:50%;
+            height:100px;
+           
+            background-color:deepskyblue;
+            caption-side:bottom;
+            
+        }
+        td, th {
+            vertical-align:middle;
+            padding: 5px;
+            text-align: center;
+            border:1px solid black
+        }
+        tr:hover{
+            background-color:aquamarine;
+            text-decoration:underline;
+            font-size:20px
+        }
+        tr:nth-child(even){
+            background-color:royalblue
+
+        }
+        thead{background-color:antiquewhite}
+        caption{font-size:20px;background-color:chartreuse}
+
+        img{
+            float:left;height:300px;object-fit:fill
+        }
+        #otto {
+            position: fixed;
+            right: 50px;
+            top: 50px;
+            width: 130px;
+            height: 130px;
+        }
+            
+
+
+        #baslık{
+            font-family:'Bookman Old Style';
+            font-variant-caps:small-caps;
+            background-color:aquamarine;
+            color:indianred;
+            text-align:center;
+            position:sticky;top:0;
+            text-shadow:5px 5px rgb(203, 151, 43)
+        }
+        div + p{
+            color:blue
+        }
+        #p11{
+            color:blue;
+            }
+        #pd2::before{
+            content:url(Gingerman-icon.png)
+        }
+        #pd2::after {
+            content: url(Gingerman-icon.png)
+        }
+        #p11::selection{
+            background-color:red;
+            color:yellow
+        }
+        div[class= gradient]{
+            border:1px solid black;
+            width:100%;
+            height:200px;
+            background-image:linear-gradient(to right ,rgb(43, 190, 43),rgb(245, 72, 22))
+        }
+        div[class= gradient2] {
+            border: 1px solid black;
+            width: 100%;
+            height: 200px;
+            background-image: repeating-linear-gradient(45deg,yellow,red ,green 10%)
+        }
+        div[class= gradient3] {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-image: radial-gradient(yellow,green,red);margin:150px;position:absolute
+        }
+        div[class= gradient4] {
+            border: 1px solid black;
+            position:absolute;
+            margin:50px;
+            box-shadow:25px 25px 10px grey;
+            left:250px;
+            width: 200px;
+            height: 200px;
+            background-image: repeating-radial-gradient(rgb(44, 104, 178),rgb(64, 212, 21),rgb(221, 186, 28) 30%)
+        }
+        #effect{
+            border:3px solid black;
+            width:50px;
+            overflow:hidden;
+            text-overflow:ellipsis
+            
+        }
+        #effect:hover{
+            overflow:visible
+        }
+
+        div[id=transform]{
+            width:150px;
+            height:150px;
+            background-color:yellow;
+            transform:translate(200px,300px)
+        }
+        div[id=rotate] {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            /*transform: translate(400px,200px);*/
+            transform:rotate(45deg)
+        }
+        div[id=scale] {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            transform:scale(2,2);
+            position:absolute;
+            left:450px
+        }
+        div[id=scew] {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            transform: skew(25deg,20deg);
+            position: absolute;
+            left: 750px
+        }
+            /*matrix fonk hepsinin bir arada yazılması*/
+
+        
+    </style>
+
+
+
+
+
+</head>
+<body>
+
+    <h1 id="baslık">css dersleri</h1>
+    <p id="dotted">dotted</p>
+    <p id="dashed">dashed</p>
+    <p id="solid">solid</p>
+    <p id="double">double</p>
+    <p id="groove">groove</p>
+    <p id="ridge">ridge</p>
+    <p id="inset">inset</p>
+    <p id="outset">outset</p>
+    <p id="none">none</p>
+    <p id="hidden">hidden</p>
+    <br /><br /><br />
+
+    <div id="back">
+        <h4 class="background-ders">
+            <img src="html-icon.png" />
+            James Clark Ross (d. 15 Nisan 1800, Londra; ö. 3 Nisan 1862, Aylesbury), Britanyalı deniz subayı.
+
+            1829 yılında Sir John Ross ve Sir William Parry ile beraber Kuzey Kutbu'nu keşfetti. 1839'da Güney Kutbu'na yaptığı seferde Ross Adası'nı keşfetti ve adaya kendi ismini verdi. Güney Kutbu'nda keşfettiği iki yanardağına ise HMS Erebus ve HMS Terror adlı gemilerinin ismini verdi (Erebus Dağı ve Terör Dağı).
+
+            Ayrıca, Antarktika'da bulunan Ross Buz Sahanlığı ve Ross Denizi gibi coğrafik bölgeler de Ross'un ismini taşımaktadır.
+            James Clark Ross (d. 15 Nisan 1800, Londra; ö. 3 Nisan 1862, Aylesbury), Britanyalı deniz subayı.
+
+            1829 yılında Sir John Ross ve Sir William Parry ile beraber Kuzey Kutbu'nu keşfetti. 1839'da Güney Kutbu'na yaptığı seferde Ross Adası'nı keşfetti ve adaya kendi ismini verdi. Güney Kutbu'nda keşfettiği iki yanardağına ise HMS Erebus ve HMS Terror adlı gemilerinin ismini verdi (Erebus Dağı ve Terör Dağı).
+
+            Ayrıca, Antarktika'da bulunan Ross Buz Sahanlığı ve Ross Denizi gibi coğrafik bölgeler de Ross'un ismini taşımaktadır.
+            James Clark Ross (d. 15 Nisan 1800, Londra; ö. 3 Nisan 1862, Aylesbury), Britanyalı deniz subayı.
+
+            1829 yılında Sir John Ross ve Sir William Parry ile beraber Kuzey Kutbu'nu keşfetti. 1839'da Güney Kutbu'na yaptığı seferde Ross Adası'nı keşfetti ve adaya kendi ismini verdi. Güney Kutbu'nda keşfettiği iki yanardağına ise HMS Erebus ve HMS Terror adlı gemilerinin ismini verdi (Erebus Dağı ve Terör Dağı).
+
+            Ayrıca, Antarktika'da bulunan Ross Buz Sahanlığı ve Ross Denizi gibi coğrafik bölgeler de Ross'un ismini taşımaktadır.
+            James Clark Ross (d. 15 Nisan 1800, Londra; ö. 3 Nisan 1862, Aylesbury), Britanyalı deniz subayı.
+
+            1829 yılında Sir John Ross ve Sir William Parry ile beraber Kuzey Kutbu'nu keşfetti. 1839'da Güney Kutbu'na yaptığı seferde Ross Adası'nı keşfetti ve adaya kendi ismini verdi. Güney Kutbu'nda keşfettiği iki yanardağına ise HMS Erebus ve HMS Terror adlı gemilerinin ismini verdi (Erebus Dağı ve Terör Dağı).
+
+            Ayrıca, Antarktika'da bulunan Ross Buz Sahanlığı ve Ross Denizi gibi coğrafik bölgeler de Ross'un ismini taşımaktadır.
+        </h4>
+    </div><br />
+    <h5>css eğitimleri</h5>
+    <br /><br />
+    <a href="http://www.google.com" target="_blank">Google <span id="g-span">google'a gitmak için tıklayın</span></a><br />
+    <a href="http://www.youtube.com" target="_blank">Youtube</a>
+    <br />
+    <ul>
+        <li>python</li>
+        <li>java</li>
+        <li>c++</li>
+    </ul>
+    <ol>
+
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+    </ol><br /><br />
+
+    <table>
+        <caption>kişiler</caption>
+        <thead>
+            <tr>
+                <th>isim</th>
+                <th>meslek</th>
+                <th>yaş</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ali</td>
+                <td>doktor</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>veli</td>
+                <td>polis</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>cansu</td>
+                <td>mimar</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>meryem</td>
+                <td>mühendis</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table><br /><br />
+    <img id="otto" src="osmanlı.png" /><br />
+    <div>
+        <p id="p11">div içi paragraf 1</p>
+        <p>div içi paragraf 2</p>
+    </div>
+    <p>div dışı paragraf 1</p>
+    <p id="pd2">div dışı paragraf 2</p>
+    <br /><br />
+    <a class="nba" href="http://www.nba.com" target="_blank">nba</a>
+    <a class="nba" href="http://www.asdf.net" target="_self">boş site</a><br />
+    <div class="gradient"></div>
+    <div class="gradient2"></div>
+    <div class="gradient3"></div>
+    <div class="gradient4"></div><br />
+    <div id="effect">css öğrenmek çooooooooooooooooooook kolay</div><br /><br />
+
+    <div id="transform">2d translate -öteleme</div>
+    <div id="rotate">2d rotate-döndürme</div>
+    <div id="scale">2d scale-ölçekleme</div>
+    <div id="scew">2d scew-açı verme</div><br /><br />
+
+
+    
+
+    <br /><br /><br />
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>geri sayım</title>
+
+    <style>
+
+        body {
+            background-color: crimson;
+        }
+
+        #div1 {
+            width: 40%;
+            height: auto;
+            position: relative;
+            left: 450px;
+            top: 150px;
+        }
+        #bitti {
+            width: 35%;
+            height: 100px;
+            position: absolute;
+            left: 460px;
+            top: 330px;
+            background-color:lightpink;
+            color:lightslategrey;
+            font-weight:bold;
+            font-size:64px;
+            text-align:center;
+            border:2px solid black
+            
+            
+        }
+
+        #saat {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center
+        }
+
+        #dakika {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center
+        }
+
+        #saniye {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center
+        }
+    </style>
+
+
+</head>
+<body id="arka">
+    <div id="div1">
+        <div class="geri" id="saat"></div>
+        <div class="geri" id="dakika"></div>
+        <div class="geri" id="saniye"></div>
+
+    </div>
+    <div id="bitti"></div>
+
+    <script>
+
+        var saat = prompt("saat:", 0);
+        var dakika = prompt("dakika", 0);
+        var saniye = prompt("saniye", 10);
+
+
+        var a=setInterval(function () {
+
+            document.getElementById("saniye").innerHTML = saniye--;
+            document.getElementById("dakika").innerHTML = dakika;
+            document.getElementById("saat").innerHTML = saat;
+
+            if (Number(document.getElementById("saniye").innerHTML) == 0) {
+
+                saniye = 59;
+                dakika--;
+            }
+            if (Number(document.getElementById("dakika").innerHTML) == 0 &&
+                Number(document.getElementById("saniye").innerHTML) == 0){
+
+                dakika = 59;
+                saat--;
+            }
+            if (Number(document.getElementById("dakika").innerHTML) == 0 &&
+                Number(document.getElementById("saniye").innerHTML) == 0 &&
+                Number(document.getElementById("saat").innerHTML)==0  )  {
+                for (i = 0; i < 3; i++) {
+                    document.getElementsByClassName("geri")[i].style.backgroundColor = "red";
+                    clearInterval(a);
+                    
+
+                } document.getElementById("arka").style.backgroundColor = "white";
+
+                setInterval(function(){
+                    document.getElementById("bitti").innerHTML = "süre bitti";
+                    setTimeout(function(){
+                        document.getElementById("bitti").innerHTML = "";
+                    }, 1000)
+
+                }, 2000)
+               
+                
+                
+                
+            }
+
+
+
+
+        }, 1000)
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Not Sonuç</title>
+
+    <style>
+        #div1 {
+            width: 30%;
+            height: auto;
+            position: absolute;
+            left: 35%;
+            top: 25%;
+            background-color: lightgreen;
+            border-radius: 10px
+        }
+
+        #vize1 {
+            width: 150px;
+            height: 20px;
+            margin-left: 50px;
+            margin-top: 50px
+        }
+
+        #vize2 {
+            width: 150px;
+            height: 20px;
+            margin-left: 50px;
+            margin-top: 10px
+        }
+        #final {
+            width: 150px;
+            height: 20px;
+            margin-left: 59px;
+            margin-top: 10px
+        }
+
+        #btn1 {
+            width: 150px;
+            height: 40px;
+            margin-left: 100px;
+            background-color: coral
+        }
+        #div2 {
+            width: 50px;
+            height: 50px;
+            margin-left: 150px;
+            text-align:center;
+            font-size:32px;
+            display:none;
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div id="div1">
+        <label style="margin-left:20px" for="vize1">vize 1 :</label>
+        <input id="vize1" type="text" /><br />
+        <label style="margin-left:20px" for="vize2">vize 2 :</label>
+        <input id="vize2" type="text" /><br />
+        <label style="margin-left:20px" for="final">final :</label>
+        <input id="final" type="text" /><br />
+
+        <br />
+
+        <div id="div2"></div><br />
+        
+        <button onclick="yazdir()" id="btn1">hesapla</button>
+    
+    
+    
+    
+    
+    </div>
+
+    <script>
+
+        var vize1, vize2, final, ortalama;
+
+        function hesapla() {
+            vize1 = document.getElementById("vize1").value;
+            vize2 = document.getElementById("vize2").value;
+            final = document.getElementById("final").value;
+
+            ortalama = (vize1 * 0.3) + (vize2 * 0.3) + (final * 0.4);
+            return ortalama
+        }
+
+        function harfNotu() {
+
+            var ort = hesapla()
+
+            if (ort > 90) {
+                return "AA";
+            }
+            else if (ort > 80) {
+                return "BA";
+            }
+            else if (ort > 75) {
+                return "BB";
+            }
+            else if (ort > 65) {
+                return "CB";
+            }
+            else if (ort > 55) {
+                return "CC";
+            }
+            else if (ort > 50) {
+                return "DC";
+            }
+            else if (ort > 40) {
+                return "DD";
+            }
+            else { return "FF"}
+        }
+
+        function yazdir() {
+
+            document.getElementById("div2").style.display = "block";
+            document.getElementById("div2").innerHTML = harfNotu();
+
+            if (harfNotu() == "FF") {
+                document.getElementById("div2").style.backgroundColor = "red";
+            }
+            else if (harfNotu() == "DD" || harfNotu() == "DC") {
+                document.getElementById("div2").style.backgroundColor = "yellow";
+            }
+            else if (harfNotu() == "AA" || harfNotu() == "BA") {
+                document.getElementById("div2").style.backgroundColor = "green";
+                document.getElementById("div2").style.color="white"
+            }
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

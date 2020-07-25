@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="btn" onclick="ornek()">tıkla</button><br /><br />
+    <div id="div">listeyi görmek için tıklayın</div>
+
+
+    <script>
+
+        function ornek() {
+            var istek = new XMLHttpRequest();
+            istek.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    var jasondeger = JSON.parse(this.responseText);
+                    var sonuc = "";
+                    var sonuc2 = "";
+                    var deger = jasondeger.kisiler;
+                    var degeruzunluk = deger.length;
+                    //var dil = deger[3];
+                    //var diluzunluk = dil.length;
+
+                    for (i = 0; i < degeruzunluk; i++) {
+                        
+
+                        for (j = 0; j < deger[i].diller.length; j++) {
+                            sonuc2 +=  "dil : " + deger[i].diller[j].dil + " --" + "seviye : "
+                                + deger[i].diller[j].seviye + "<br/>"
+                        }
+                        sonuc += "kişi adı : " + deger[i].ad + "<br/>" + "yaş : " + deger[i].yas +
+                            "<br/>" + "meslek : " + deger[i].meslek + "<br/><br/>" + sonuc2 + "<br/><br/>"
+                        
+                    }
+                    document.getElementById("div").innerHTML = sonuc ;
+                }
+                else { document.getElementById("div").innerHTML = "hata oluştu" }
+            }
+            istek.open("GET", "ornek.json", true);
+            istek.send()
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

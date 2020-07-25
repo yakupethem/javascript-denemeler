@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .class1{
+            width:100%;
+            height:80px;
+            text-align:center;
+        }
+        #div1{
+            background-color:yellow;
+            height:auto
+        }
+        #div2 {
+            background-color:red;
+        }
+        #div3 {
+            background-color: green
+        }
+        #div4 {
+            background-color: blue
+        }
+    </style>
+</head>
+<body>
+    <!--<h1>js başlık</h1>-->
+    <div id="div1" class="class1" name="name1">
+        <p id="p1">birinci paragraf</p>
+        <p id="p2">ikinci paragraf</p>
+        <p id="p3">üçüncü paragraf</p>
+
+
+
+    </div>
+    <div id="div2" class="class1"></div>
+    <div id="div3" class="class1"></div>
+    <div id="div4" class="class1"></div>
+    <input onkeypress="yaziyor()" id="Text1" type="text" />
+    <button onclick="tikla()" id="buton1">tıkla</button>
+    <button onclick="pencereAc()" id="btn1">pencere aç</button>
+    <button onclick="pencereKapa()" id="btn2">pencere kapa</button>
+    <button onclick="pencereTasi()" id="btn3">pencere taşı</button>
+    <button onclick="ileri()" id="buton11">animation</button>
+    <button onclick="stopsetIn()" id="buton12">setInterval durdur</button>
+
+    <script>
+
+
+
+        //document.write("hoş geldiniz")
+        //document.write(10 + 15)
+        //console.log("consola yazılan yazılar deneme yanılma gibi")
+        ////window.alert("sayfaya hoşgeldiniz")
+        ////window.print()
+        ////document.getElementById("div1").innerHTML = "getelementbyID"
+        //document.getElementById("div1").innerText = "10+15 >>bu   ya sadece yazı yazılır"
+        //document.getElementById("div2").innerHTML = "<b><i>inner html yazıları yazılır</i></b>"
+        //tek satırlık yorum satırları
+        /*
+         çok satırlı
+         yorum satırları
+         */
+        //document.write("------------")
+
+
+
+        //var sayi = 12;
+        //var metin = "araba";
+        //var bool = true;
+        //var meyveler = ["elma", "armut", "muz"];
+        //var sozluk = { ad: "yakup", soyad: "trkylmz", yas: 26 }
+
+        //document.write(sayi, "'nın türü: ", typeof sayi)
+        //document.write("------------")
+        //document.write(metin, "'nın türü: ", typeof metin)
+        //document.write("------------")
+        //document.write(bool, "'nın türü: ", typeof bool)
+        //document.write("------------")
+        //document.write(meyveler, "'nın türü: ", typeof meyveler)
+        //document.write("------------")
+        //document.write(sozluk, "'nın türü: ", typeof sozluk)
+        //document.write("------------")
+        //document.write(sozluk.ad)
+        //document.write("------------")
+        //document.write(meyveler[0])
+        //document.write("------------")
+        ////cons ile değişken tanımlandıktan  sonra değeri değiştirilmez
+        //const j = 10
+        //document.write("const j =" ,j)
+
+        //var x = 10;
+        //var y = 5;
+        //var z = 6;
+
+        //x += y
+        //z %= y
+
+        //document.write(z)
+
+
+        //function topla(sayi1, sayi2) {
+
+        //    return sayi1 + sayi2;
+        //}
+        //var x=topla(4,5)
+        //document.write("toplam="+" "+x)
+        // return fonksiyonu bitirir. ondan sonra gelen hiçbir şeye bakmaz
+
+
+        //function kilohesapla(kilogram) {
+
+        //    var gram = kilogram / 1000;
+        //    document.write(gram)
+        //}
+        //kilohesapla(500)
+
+        //var x = 3;
+        //document.writeln(typeof x)
+
+        //x = x.toString()
+        //document.write(typeof x)
+
+        //var x = "3";
+        //document.writeln(typeof x);
+
+        //x = Number(x)
+        //document.write(typeof x)
+
+        //var x = 3.23
+        //x = parseInt(x)  //  parseint integer a çevirir tam kısmı alır
+        //document.write(x)
+
+        //var x = 34141223
+        //x = x.toExponential(3)
+        //document.write(x)
+
+
+        //var x = 8e2
+        ////8x10 üzeri 2 >>> e 10 üzeri demek
+        //document.write(x)
+
+        //var x = 213.126823;
+
+        //x = x.toFixed(3) //virgülden sonra kaç haneyi göstermek istersek yuvarlama yapar
+        //document.write(x)
+
+        //var x = "javscript ile web tasarım öğreniyorum ile"
+        //var y="internetten öğreniyorum"
+
+
+
+        //var a = x.length
+        //var b = x.slice(-15,-7)
+        //var c = x.substring(3, 21)
+        //var d = x.substr(7, 5)
+        //var e = x.replace("ile", "ama")
+        //// replace harf duyarlılığı vardır "  /.../i  " yazarak harf duyarlılığını kaldırırsın
+        //var f = x.replace(/WEb/i, "kep")
+        //// bütün aynı sözckleri değiştirmek için /..../g
+        //var g = x.replace(/ile/g, "ama")
+        //var h=x.toUpperCase()
+        //var i = x.concat(" ", y)
+        //var ı = x+" "+y
+
+
+        //document.writeln(a)
+        //document.writeln(b)
+        //document.writeln(c)
+        //document.writeln(d)
+        //document.writeln(e)
+        //document.writeln(f)
+        //document.writeln(g)
+        //document.writeln(h)
+        //document.writeln(i)
+        //document.writeln(ı)
+
+
+        //var x = "               javascrip ile web öğreniyorum      "
+        //var a = x.trim()
+        //document.writeln("trimsiz:" + x.length)
+        //document.writeln("trimli:" + a.length)
+        //// trim boşlukları siler
+
+
+
+        //var x = "asdf sasdf asdfsdfasdfdsaf"
+        //document.writeln(x.charAt(5))
+        //document.writeln(x.charCodeAt(5))  //  UTF kodu
+        //document.write(x.indexOf("sasdf"))
+
+
+        //var x = "a,b,c,d"
+        //var a =x.split(",")
+        //document.write(a[1])
+        //// stringi array e çevirir
+
+        //var meyveler = ["elma", "armut", "kiraz","karpuz","üzüm","şeftali"]
+        //var sebzeler=["pırasa","ıspanak"]
+
+        //var ekle = meyveler.push("karpuz")
+        //var cikar = meyveler.pop()
+        //var ilkSil = meyveler.shift()
+        //var ilkEkle=meyveler.unshift("kavun")
+        //var secDegistir=meyveler.splice(1,0,"erik")
+        //var sec=meyveler.slice(1,3)
+
+        //var birlestir=meyveler.concat(sebzeler)
+        //document.writeln(birlestir)
+
+        //document.write(ilkSil)
+        //document.write(ekle)
+        //document.write(cikar)
+        //document.write(sec)
+        //document.write(meyveler)
+
+        //var sayilar = [32, 12, 65, 23, 5, 876, 2, 19]
+
+        //sayilar.sort(function (x, y) { return x - y })   //küçükten büyüğe sıralar
+
+        //document.getElementById("div1").innerHTML = sayilar + ("<br/><br/>")
+        ////meyveler.sort()   //alfabetik sıralar
+        ////meyveler.reverse()  //tersten sıralar
+        //document.getElementById("div2").innerHTML=meyveler
+
+        //var arabalar =
+        //[
+        //    { marka: "merso", yıl: 2020 },
+        //    { marka: "BMW", yıl: 2015 },
+        //    { marka: "audi", yıl: 2017 }
+        //];
+
+        //function aracgöster()
+        //{
+        //    document.getElementById("div1").innerHTML =
+
+        //    arabalar[0].marka + " " + arabalar[0].yıl + ("<br/><br/>")+
+        //    arabalar[1].marka + " " + arabalar[1].yıl + ("<br/><br/>")+
+        //    arabalar[2].marka + " " + arabalar[2].yıl + ("<br/><br/>");
+        //}
+        //function sirala()
+        //{
+        //    arabalar.sort(function(a,b) { return a.yıl - b.yıl });
+        //        aracgöster()
+        //}
+        ////aracgöster()
+        //sirala()
+
+
+
+        //var sayilar = [32, 54, 23, 76, 56, 4, 34, 7, 9, 33]
+        //function sirala(item, index) {
+
+        //    document.getElementById("div1").innerHTML += item + "<br>"
+        //                        }
+        ////sayilar.forEach(sirala)
+
+        //var uckat=sayilar.map(uçKatı)
+
+        //function uçKatı(sayi) {
+        //    return sayi * 3;
+        //}
+
+        //var filtre = sayilar.filter(filtrele)
+
+        //function filtrele(value) {
+        //    return value > 30;
+        //}
+
+        //document.getElementById("div1").innerHTML=filtre
+
+        //function topla(toplam, value) {
+        //    return toplam+value
+        //}
+        //var sum=sayilar.reduce(topla)
+        //document.getElementById("div1").innerHTML = sum
+
+        //var calisan = {
+        //    isim: "yako", soyisi: "trkylmz", yas: 26,
+
+        //    tamAd:function () {
+        //        return this.isim+" "+this.soyisi+" "+(this.yas+10)
+        //    }
+        //    }
+
+        //var a = calisan.tamAd()
+        //document.write(a)
+
+        //var tarih = new Date()
+        //document.write(tarih.getHours())
+
+
+        //var a = ["elma", "armut"];
+
+        //function kontrol(x) {
+        //    return x.constructor.toString().indexOf("Array") > -1;
+        //}
+
+        //document.write(kontrol(a))
+
+
+        //mantıksal operaötler:  && >>>> ve        || >>> veya      ! >>değil
+        ////-------------------------------------------------------
+        //var x = 4;
+        //var y = 3;
+
+        //if (x < y) { document.write("x, y'den küçüktür") }
+        //else {document.write("x, y'den büyüktür")}
+
+
+        //var yas = window.prompt("yaşınızı yazın", 0);
+        //if (yas > 18) { window.alert("hoşgeldiniz") }
+        //else {window.alert("yaşınız küçük")}
+
+        //var saat = new Date().getHours();
+
+        //if (6 < saat && saat < 12) { window.alert("saat:" + saat + " " + "günaydın") }
+        //else if (12 <= saat && saat < 19) { window.alert("saat:" + saat + " " + "iyi günler") }
+        //else if (19 <= saat && saat < 23) { window.alert("saat:" + saat + " " + "iyi akşamlar") }
+        //else  { window.alert("saat:" + saat + " " + "iyi geceler") }
+
+
+
+        ///ternary :
+
+        //var yas = prompt("yaşınız....", 0);
+        //var izin = (yas < 18) ? "giriş yasak":"hoşgeldiniz";
+        //window.alert(izin)
+
+        //var sebzeler = ["pırasa", "ıspanak", "karnıbahar","kabak"]
+        //var a = Math.round(Math.random() *5)
+        //switch (a) {
+        //    case 0:
+        //        document.write("seçilen sebze:" + sebzeler[a])
+        //        break;
+        //    case 1:
+        //        document.write("seçilen sebze:" + sebzeler[a])
+        //        break;
+        //    case 2:
+        //        document.write("seçilen sebze:" + sebzeler[a])
+        //        break;
+        //    case 3:
+        //        document.write("seçilen sebze:" + sebzeler[a])
+        //        break;
+        //    default:
+        //        document.write("meyve yok")
+        //        break;
+        //}
+
+        //var yazi = "";
+        //for (i = 1; i <= 10; i++) {
+        //    for (j = 1; j <= 10; j++) {
+        //        yazi += i + "x" + j + "=" + (i * j) + "<br>";
+
+        //    }
+        //    yazi += "----------------<br>";
+        //}
+        //document.getElementById("div1").innerHTML = yazi;
+
+        //var sebzeler = ["pırasa", "ıspanak", "karnıbahar", "kabak"];
+        //var sebze = "";
+        //var i = 0;
+        //while (i < sebzeler.length) {
+        //    sebze += sebzeler[i] + "<br>"
+        //    i++
+
+        //}
+        //while (true) {
+        //    sebze += sebzeler[i] + "<br>";
+        //    i++
+        //    if (i == sebzeler.length) {
+        //        break;
+        //    }
+
+        //}
+
+        //do {
+
+        //    sebze += sebzeler[i] + "<br>";
+        //    i++
+        //} while (i < sebzeler.length)
+        //document.getElementById("div1").innerHTML = sebze;
+
+
+        //var yazi = "";
+        //var sebze;
+        /*
+        for (sebze in sebzeler) {
+            yazi += sebzeler[sebze] + "<br>";
+        }
+        */
+
+        //for (sebze of sebzeler) {
+        //    yazi += sebze + "<br>";
+        //}
+
+        //for (i = 3; i < 20; i++) {
+        //    var a = false;
+        //    for (j = 2; j < i; j++) {
+        //        if (i % j == 0) {
+        //        a=true
+        //            break
+        //        }
+        //        yazi += i + "<br>"
+        //        break
+
+        //    }
+        //}
+
+        //if (a == false) {
+        //document.getElementById("div1").innerHTML=yazi
+        //}
+
+
+        //document.getElementById("div1").innerHTML = "javascript";
+        //document.getElementsByName("name1")[0].innerHTML = "javascript";
+        //document.getElementsByClassName("class1")[1].innerHTML = "html";
+        //document.querySelectorAll("div")[2].innerHTML = "CSS"
+        //document.getElementById("div1").id="yenidiv1"
+        //document.getElementById("div1").className = "class2"
+
+        //document.getElementById("div2").remove();
+        //var a = document.getElementById("div1");
+        ////a.style.fontSize = "32px";
+        ////a.style.color="grey"
+
+        //var isim = prompt("isminiz: ", null)
+
+        //var isim2 = document.getElementById("Text1")
+
+
+
+        //function yaziyor() {
+
+
+        //        document.getElementById("div2").innerHTML = "<b><i>yaziyor.....</i></b>"
+
+        //}
+
+        //document.getElementById("buton1").addEventListener("click",tikla)
+        //function tikla() {
+        //    a.style.backgroundColor = "aqua";
+        //    a.innerHTML = "hoşgeldiniz " + isim;
+        //    document.getElementById("div3").innerHTML="hoşgeldin "+isim2.value
+
+        //}
+
+        //var a = document.getElementById("div1");
+        //var b = document.getElementById("p2")
+
+        //var x = document.createElement("p");
+        //var y = document.createTextNode("dördüncü element");
+        //x.appendChild(y)
+
+        //a.insertBefore(x, document.getElementById("p3"));
+        //a.removeChild(document.getElementById("p3"))
+
+        //a.replaceChild(y, b)
+
+        //var deneme = document.createAttribute("class");
+        //deneme.value = "class2";
+        //a.setAttributeNode(deneme);
+
+        //a.setAttribute("id","newdiv")
+
+        //alert(document.body.innerHTML)
+
+        //var a = document.getElementsByTagName("p");
+        //for (i = 0; i < a.length; i++) {
+        //    a[i].style.color = "red";
+        //}
+
+
+        //var a = window.confirm("yetişkin olduğunuzu onaylıyormusunz?");
+        //if (a) {
+        //    window.alert("hoşgeldiniz")
+        //}
+        //else {
+        //    window.alert("giriş yasak")
+        //}
+
+        //var pencere;
+
+        //function pencereAc(){
+        //    pencere=window.open("javascript.html","_blank","width=200,height=200")
+        //}
+        //function pencereKapa(){
+        //    window.close()
+        //}
+        //function pencereTasi(){
+        //    pencere.moveTo(400, 400);
+        //    pencere.focus();
+        //}
+
+
+        //var x = screen.width;
+        //var y = screen.height;
+        //var z = screen.pixelDepth;
+        //var y = screen.colorDepth
+        //document.getElementById("div2").innerHTML = x + " " + y + " " + z + " " + y
+
+        //function ileri() {
+        //    window.open("animation-css.html","_self")
+        //}
+
+        var sonuc;
+        function renk() {
+            var x = ["red", "blue", "yellow", "green"];
+            var y = Math.round(Math.random() * 3)
+            sonuc = x[y]
+        }
+        function setİn() {
+            renk();
+            document.getElementById("div2").innerHTML += "yakocan40- "
+            document.getElementById("div2").style.backgroundColor = sonuc;
+        }
+        var set=setInterval(setİn, 2000)
+
+        function stopsetIn() {
+            clearInterval(set)
+        }
+        var settime = setTimeout(settimeout,2000)
+        function settimeout() {
+            renk();
+            document.getElementById("div3").innerHTML += "set time out birkere yazıp bırakır "
+            document.getElementById("div3").style.backgroundColor = sonuc;
+        }
+        clearTimeout(settime)
+
+
+
+    </script>
+
+
+
+</body>
+</html>

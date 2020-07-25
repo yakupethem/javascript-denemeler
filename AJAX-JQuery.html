@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ajax-jquery</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+</head>
+<body>
+    <h2>Meteoroloji illeri sıraladı ve uyardı! Gök gürültülü sağanak geliyor</h2>
+    <button onclick="haber()" id="btn">haberin devamı .....</button><br />
+    <div id="div"></div><br />
+    <!--<button onclick="haberkapat()" id="btn2" style="display:none">haberi kapat</button>-->
+    <script>
+        $("#btn").click(function () {
+            $("#div").load("deneme.txt")
+        })
+    </script>
+</body>
+</html>

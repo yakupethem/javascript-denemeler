@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery-ui</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <style>
+
+        .deneme{
+            width:50%;
+            height:400px;
+            background-color:yellow;
+            padding:20px;
+        }
+        #div2{
+            width:100px;
+            height:100px;
+            background-color:lawngreen;
+            color:white;
+            text-align:center;
+        }
+        #p1{
+            position:relative;
+            top:80px;
+            height:20px;
+            font-size:32px; 
+        }
+
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <div id="div1" class="deneme">
+
+        <div id="div2">Drag
+        
+        <p id="p1"></p>
+        
+        
+        </div>
+
+    </div>
+
+    <script>
+
+        $(function () {
+
+            $("#div2").draggable({
+
+                axis: "both",
+                containment: "#div1",
+                revert: true,
+                //helper:"clone",
+                cursor:"move",
+                start: (function () {
+                    $("#p1").html("tutuldu");
+                    
+                }),
+                stop: (function () {
+                    $("#p1").html("bırakıldı");
+                    $("#div1").css("background-color","blue")
+                }),
+                drag: (function () {
+                    $("#div1").css("background-color", "red");
+                    
+                })
+
+
+
+            })
+
+
+
+
+
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

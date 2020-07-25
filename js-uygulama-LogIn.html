@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Kullanıcı Girişi</title>
+
+
+    <style>
+        #div1{
+            width:30%;
+            height:200px;
+            position:absolute;
+            left:35%;
+            top:25%;
+            background-color:lightgreen;
+            border-radius:10px
+        }
+        #kullaniciadi{
+            width:150px;
+            height:20px;
+            margin-left:50px;
+            margin-top:50px
+
+        }
+        #parola {
+            width: 150px;
+            height: 20px;
+            margin-left: 67px;
+            margin-top: 10px
+        }
+        #btn1 {
+            width: 150px;
+            height: 40px;
+            margin-left: 100px;
+            background-color:coral
+        }
+
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div id="div1">
+
+        <label style="margin-left:20px" for="kullaniciadi">Kullanıcı Adı :</label>
+        <input id="kullaniciadi" type="text" />
+        <br /><br />
+        <label style="margin-left:20px" for="parola">Parola Adı :</label>
+        <input id="parola" type="password" />
+        <br /><br />
+        <button onclick="girisOnay()" id="btn1">Giriş</button>
+
+
+    </div>
+
+
+    <script>
+
+        var kullanicilar = [{ kullaniciAdi: "admin", parola:"admin"},
+                            { kullaniciAdi: "yako", parola:"y40"},
+                            { kullaniciAdi: "eto", parola:"4040"}]
+
+        var girilenKullaniciAdi;
+        var girilenparola;
+        var x;
+
+        function kontrolEt() {
+             girilenKullaniciAdi = document.getElementById("kullaniciadi").value;
+             girilenparola = document.getElementById("parola").value;
+
+            for (x of kullanicilar) {
+
+                if ((x.kullaniciAdi == girilenKullaniciAdi) && (x.parola == girilenparola)) {
+                    return true
+                }
+                
+            }
+
+
+        }
+
+        function girisOnay() {
+            kontrolEt()
+            if (kontrolEt()) {
+                alert("hoşgeldiniz");
+                window.open("animation-css.html","_self")
+            }
+            else {
+                alert("hatalı giriş");
+                document.getElementById("kullaniciadi").value = "";
+                document.getElementById("parola").value = "";
+            }
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

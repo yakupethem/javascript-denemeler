@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+</head>
+<body>
+
+    <h2>Meteoroloji illeri sıraladı ve uyardı! Gök gürültülü sağanak geliyor</h2>
+    <button onclick="haber()"id="btn">haberin devamı .....</button><br />
+    <div id="div"></div><br />
+    <button onclick="haberkapat()" id="btn2" style="display:none">haberi kapat</button>
+
+    <script>
+        var istek = new XMLHttpRequest();
+        function haber() {
+
+            
+            istek.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("div").innerHTML = this.responseText;
+                    document.getElementById("btn").style.display = "none";
+                    document.getElementById("btn2").style.display = "block";
+                    
+                } else { document.getElementById("div").innerHTML = "HATA !!!" }
+            };
+            istek.open("GET", "deneme.txt", true);
+            istek.send();
+
+        }
+
+        function haberkapat() {
+            document.getElementById("btn2").style.display = "none";
+            document.getElementById("btn").style.display = "block";
+            document.getElementById("div").innerHTML=""
+        }
+
+
+    </script>
+
+</body>
+</html>
